@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080d1b" />
+  <meta name="description" content="NEXO TECH: comunidad para aprender inteligencia artificial, automatización y herramientas digitales. Explora contenido, participa y descubre la membresía PRO." />
+  <meta property="og:title" content="NEXO TECH | Aprende, conecta y crea" />
+  <meta property="og:description" content="Tu comunidad de inteligencia artificial y tecnología práctica." />
+  <meta property="og:type" content="website" />
+  <title>NEXO TECH | Comunidad de tecnología</title>
+  <style>
+    :root{--bg:#080d1b;--bg2:#0c1428;--card:#101b32;--line:rgba(185,204,250,.14);--text:#f2f7ff;--muted:#9daccc;--mint:#73efd5;--sky:#70baff;--violet:#b5a2ff;--pink:#fa91c2;--max:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:78px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 8% 18%,rgba(27,114,176,.13),transparent 35%),radial-gradient(ellipse at 91% 45%,rgba(127,75,227,.10),transparent 32%)}
+    ::selection{background:var(--mint);color:#071324}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(calc(100% - 48px),var(--max));margin:auto}
+    .topbar{position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(182,209,255,.08);background:rgba(8,13,27,.80);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+    .nav{min-height:74px;display:flex;align-items:center;gap:20px;justify-content:space-between}
+    .brand{display:inline-flex;align-items:center;gap:11px;font-size:19px;font-weight:900;letter-spacing:.075em;white-space:nowrap}
+    .brand small{color:var(--mint);font-size:11px;letter-spacing:.25em;vertical-align:middle}
+    .brand-mark{position:relative;width:32px;height:32px;background:linear-gradient(135deg,var(--mint),var(--sky) 60%,var(--violet));clip-path:polygon(50% 0%,100% 25%,100% 76%,50% 100%,0 76%,0 25%)}
+    .brand-mark::before{content:"";position:absolute;inset:7px;background:var(--bg);clip-path:inherit}
+    .navlinks{display:flex;gap:6px;align-items:center}
+    .navlinks a{font-size:13px;font-weight:700;color:var(--muted);padding:9px 15px;border-radius:12px;transition:.2s}
+    .navlinks a:hover,.navlinks a.active{color:var(--text);background:rgba(255,255,255,.065)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:13px;padding:13px 20px;border:1px solid transparent;font-size:14px;font-weight:800;transition:transform .2s,box-shadow .2s,background .2s;min-height:47px}
+    .btn:hover{transform:translateY(-2px)}
+    .btn:focus-visible,a:focus-visible,input:focus-visible,[role=tab]:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+    .btn-primary{color:#041b27;background:linear-gradient(110deg,var(--mint),#91caff);box-shadow:0 9px 35px rgba(78,234,203,.16)}
+    .btn-outline{color:var(--text);border-color:rgba(202,219,254,.22);background:rgba(255,255,255,.028)}
+    .btn-outline:hover{background:rgba(255,255,255,.075)}
+    .btn-header{padding:10px 18px;min-height:40px;white-space:nowrap}
+    .arrow{font-size:17px;font-weight:800;line-height:1}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:#9cebdc;font-size:12px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px var(--mint)}
+    .screen{min-height:calc(100svh - 74px);padding:clamp(72px,9vw,112px) 0 88px;position:relative;overflow:hidden;scroll-margin-top:73px}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(36px,6vw,92px);align-items:center}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(49px,5.4vw,78px);line-height:1.035;letter-spacing:-.065em;font-weight:900;margin:23px 0}
+    .gradient-text{background:linear-gradient(100deg,var(--mint),var(--sky) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(16px,1.7vw,19px);line-height:1.78;color:#afbfdd;max-width:540px}
+    .actions{display:flex;gap:11px;flex-wrap:wrap;margin:30px 0}
+    .micro-row{display:flex;flex-wrap:wrap;gap:13px 24px;border-top:1px solid var(--line);padding-top:24px;margin-top:37px}
+    .micro-row span{font-size:12px;font-weight:650;color:var(--muted)}
+    .micro-row b{color:var(--text);font-size:15px;margin-right:6px}
+    .visual{position:relative;border-radius:27px;border:1px solid rgba(151,192,255,.20);background:linear-gradient(145deg,rgba(27,42,75,.80),rgba(10,16,33,.92));min-height:480px;padding:24px;overflow:hidden;box-shadow:0 25px 95px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.09)}
+    .visual::before{content:"";position:absolute;width:380px;height:380px;left:50%;top:34%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(97,139,255,.2),rgba(49,240,206,.05) 55%,transparent 70%);filter:blur(8px)}
+    .visual-head{position:relative;display:flex;justify-content:space-between;align-items:center;color:#bac8e5;font-size:11px;font-weight:800;letter-spacing:.16em;z-index:2}
+    .dots{display:flex;gap:5px}.dots i{display:block;background:#6e80a8;width:6px;height:6px;border-radius:50%}.dots i:first-child{background:var(--mint)}
+    .orbital{position:relative;width:min(320px,100%);aspect-ratio:1;margin:28px auto 18px;display:grid;place-items:center}
+    .ring{position:absolute;inset:8%;border-radius:50%;border:1px dashed rgba(158,196,255,.30);animation:spin 28s linear infinite}
+    .ring:nth-child(2){inset:20%;border-style:solid;border-color:rgba(115,239,213,.22);animation-direction:reverse;animation-duration:19s}
+    .ring:nth-child(3){inset:32%;border-color:rgba(183,165,255,.24);animation-duration:14s}
+    .orbital::before,.orbital::after{content:"";position:absolute;z-index:1;border-radius:50%;box-shadow:0 0 22px currentColor}
+    .orbital::before{width:11px;height:11px;background:var(--mint);color:rgba(115,239,213,.6);top:14%;right:25%}
+    .orbital::after{width:9px;height:9px;background:var(--violet);color:rgba(183,165,255,.5);bottom:19%;left:16%}
+    .core{position:relative;z-index:2;display:grid;place-items:center;height:105px;width:105px;border-radius:27px;border:1px solid rgba(215,246,255,.44);transform:rotate(-10deg);background:linear-gradient(135deg,rgba(114,237,215,.22),rgba(99,129,239,.23) 65%,rgba(194,138,247,.23));box-shadow:0 0 85px rgba(111,201,232,.18),inset 0 0 30px rgba(164,235,246,.09)}
+    .core strong{transform:rotate(10deg);font-size:46px;line-height:1;color:#d6fff7;letter-spacing:-.1em}
+    .float-chip{position:absolute;z-index:4;border:1px solid rgba(183,215,252,.22);border-radius:13px;background:rgba(16,30,53,.88);padding:10px 12px;box-shadow:0 14px 35px rgba(0,0,0,.2);font-size:12px;font-weight:800}
+    .float-chip small{display:block;font-size:10px;font-weight:650;color:#a2b1cf}
+    .chip-a{top:22%;left:0}.chip-b{bottom:18%;right:0}
+    .visual-bottom{position:relative;z-index:4;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .visual-stat{border:1px solid var(--line);background:rgba(255,255,255,.035);padding:13px;border-radius:14px}
+    .visual-stat small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}.visual-stat strong{font-size:13px}
+    .separator{height:1px;background:linear-gradient(90deg,transparent,rgba(183,218,253,.19),transparent)}
+    .section-head{max-width:735px;margin-bottom:35px}
+    h2{font-size:clamp(34px,4.5vw,54px);letter-spacing:-.053em;line-height:1.10;margin:17px 0 20px;font-weight:900}
+    .section-lead{font-size:16px;color:var(--muted);max-width:650px;line-height:1.75}
+    .community-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;align-items:stretch}
+    .panel{border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(20,34,60,.83),rgba(12,20,40,.94));padding:27px;box-shadow:inset 0 1px rgba(255,255,255,.04)}
+    .panel-tag{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mint);font-weight:800;margin-bottom:17px}
+    .topic-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:19px 0}
+    .topic-tabs button{background:rgba(255,255,255,.04);color:#adbbd9;border:1px solid var(--line);border-radius:100px;padding:10px 14px;font-size:12px;font-weight:800}
+    .topic-tabs button[aria-selected="true"]{background:var(--mint);border-color:var(--mint);color:#06202b}
+    .topic-card{background:linear-gradient(145deg,rgba(84,136,202,.13),rgba(111,234,207,.04));padding:24px;border-radius:17px;border:1px solid rgba(144,202,255,.12);min-height:230px}
+    .topic-icon{display:grid;place-items:center;width:47px;height:47px;border-radius:15px;font-size:23px;background:rgba(115,239,213,.12);margin-bottom:15px}
+    .topic-card h3{font-size:22px;letter-spacing:-.025em;margin-bottom:8px}.topic-card p{color:var(--muted);font-size:14px;max-width:430px}
+    .topic-card .learning{font-size:12px;color:var(--mint);font-weight:800;margin-top:22px}
+    .join-panel{position:relative;overflow:hidden}.join-panel::after{content:"";position:absolute;top:-150px;right:-170px;width:320px;height:320px;background:radial-gradient(circle,rgba(120,107,255,.18),transparent 65%);pointer-events:none}
+    .join-panel h3{font-size:29px;letter-spacing:-.04em;margin:0 0 14px}.join-panel p{color:var(--muted);font-size:14px;line-height:1.7}
+    .field-label{display:block;font-size:12px;color:#c9d7f1;font-weight:750;margin:23px 0 7px}
+    .input{width:100%;background:#0b1429;color:var(--text);border:1px solid rgba(188,211,255,.22);border-radius:12px;padding:13px 15px;min-height:48px;outline:none}
+    .input::placeholder{color:#6f82a7}.input:focus{border-color:var(--mint)}
+    .join-panel .btn{width:100%;margin-top:12px}.fine{font-size:11px!important;color:#7184aa!important;margin:12px 0 0!important}
+    .success{color:var(--mint);font-size:13px;font-weight:750;margin:12px 0 0}
+    .benefit-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:19px}
+    .benefit{border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:16px;padding:20px}.benefit-icon{font-size:21px;margin-bottom:11px}.benefit strong{display:block;font-size:14px}.benefit p{color:var(--muted);font-size:12px;margin:5px 0 0}
+    .pricing-grid{display:grid;grid-template-columns:.96fr 1.04fr;gap:28px;align-items:center}
+    .value-list{display:grid;gap:17px;margin-top:29px}
+    .value-item{display:flex;align-items:flex-start;gap:13px}.check{flex:none;width:25px;height:25px;background:rgba(115,239,213,.13);color:var(--mint);border:1px solid rgba(115,239,213,.25);border-radius:9px;display:grid;place-items:center;font-size:13px;font-weight:900}
+    .value-item strong{font-size:15px}.value-item p{margin:3px 0;color:var(--muted);font-size:13px}
+    .price-card{position:relative;border-radius:28px;border:1px solid rgba(115,239,213,.38);background:linear-gradient(160deg,#162e43,#111932 58%,#11162c);padding:clamp(25px,3.3vw,42px);box-shadow:0 25px 90px rgba(4,12,32,.32),0 0 70px rgba(115,239,213,.045)}
+    .price-card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 85% 0%,rgba(115,239,213,.11),transparent 44%);pointer-events:none}
+    .pill{display:inline-block;border-radius:100px;border:1px solid rgba(115,239,213,.25);background:rgba(115,239,213,.10);color:var(--mint);font-size:11px;font-weight:900;letter-spacing:.1em;padding:7px 12px}
+    .price-card h3{margin:20px 0 0;font-size:28px}.price-card>p{color:var(--muted);font-size:14px}
+    .price{display:flex;align-items:baseline;gap:6px;margin:30px 0 14px}.price strong{font-size:62px;line-height:1;font-weight:900;letter-spacing:-.08em}.price .curr{color:var(--mint);font-weight:850}.price .cycle{color:var(--muted);font-size:13px}
+    .price-divider{height:1px;background:var(--line);margin:25px 0}
+    .included{margin:0 0 27px;padding:0;list-style:none;display:grid;gap:13px}.included li{display:flex;align-items:center;gap:11px;font-size:14px;color:#d6e1f5}.included li::before{content:"✓";color:var(--mint);font-weight:900}
+    .price-card .btn{width:100%;font-size:15px}.payment-note{text-align:center;color:#99a9c6!important;font-size:11px!important;margin:15px 0 0!important}
+    .disclaimer{font-size:12px;color:#8b9cba;margin:25px 0 0}
+    footer{border-top:1px solid var(--line);padding:29px 0 35px;background:rgba(4,8,17,.3)}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer-inner p{font-size:12px;color:#8597b6;margin:0}.footer-inner a{font-size:12px;color:#bdcbdf}
+    .modal-backdrop{position:fixed;inset:0;z-index:99;background:rgba(2,7,17,.82);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(7px)}.modal-backdrop[hidden]{display:none}
+    .modal{position:relative;width:min(100%,460px);background:#15243b;border:1px solid rgba(174,207,255,.22);padding:30px;border-radius:24px;box-shadow:0 24px 100px rgba(0,0,0,.40)}.modal h3{font-size:25px;letter-spacing:-.04em;margin-bottom:10px}.modal p,.modal li{color:var(--muted);font-size:14px}.modal ol{padding-left:21px}.modal code{color:#9aefe0;font-size:12px;overflow-wrap:anywhere}.modal button.close{position:absolute;right:15px;top:11px;border:0;background:transparent;color:#cdd6ec;font-size:29px;padding:0 9px}.modal .btn{margin-top:8px}
+    .keyboard-note{position:absolute;width:1px;height:1px;clip:rect(0,0,0,0);overflow:hidden;white-space:nowrap}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @media(max-width:900px){.hero-grid,.community-grid,.pricing-grid{grid-template-columns:1fr}.hero-grid{gap:40px}.visual{max-width:530px;width:100%;justify-self:center}.join-panel{min-height:100%}.pricing-grid{gap:35px}.price-card{max-width:610px}}
+    @media(max-width:640px){.container{width:min(calc(100% - 34px),var(--max))}.topbar .nav{min-height:65px}.brand{font-size:16px}.brand-mark{width:28px;height:28px}.navlinks{position:absolute;top:65px;left:0;right:0;justify-content:center;border-top:1px solid rgba(255,255,255,.04);background:#0a1020;padding:6px 0}.navlinks a{font-size:11px;padding:8px 11px}.btn-header{padding:9px 12px;font-size:11px;min-height:35px}.screen{padding-top:110px;padding-bottom:73px;min-height:auto;scroll-margin-top:104px}h1{font-size:clamp(47px,12vw,67px)}h2{font-size:38px}.lead{font-size:16px}.micro-row{gap:14px}.visual{min-height:395px;padding:17px}.orbital{width:min(270px,100%);margin:14px auto 5px}.chip-a{left:2%;top:22%}.chip-b{right:1%;bottom:18%}.float-chip{font-size:10px;padding:8px}.benefit-row{grid-template-columns:1fr;gap:10px}.benefit{display:flex;gap:13px;align-items:flex-start;padding:16px}.benefit-icon{margin:0}.panel{padding:22px}.topic-card{padding:20px}.price strong{font-size:58px}.footer-inner{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <!--
+    NEXO TECH — proyecto académico de landing page (3 pantallas).
+
+    PUBLICACIÓN: subir este archivo index.html en https://app.netlify.com/drop
+    REGISTROS: el formulario está preparado para Netlify Forms y guardará las
+      solicitudes en el panel de Netlify DESPUÉS de publicar allí, siempre que
+      Netlify detecte y tenga habilitado Forms. No crea cuentas ni grupos.
+    STRIPE: crear un Payment Link de suscripción en el panel de Stripe y
+      pegar su URL pública https://buy.stripe.com/... en STRIPE_PAYMENT_LINK
+      al final del archivo. NO colocar claves secretas en el HTML.
+    COMUNIDAD: el registro recoge interés por email. Para una comunidad real,
+      crear un servidor Discord/Telegram y gestionar invitaciones y permisos.
+    IMPORTANTE: sin enlace Stripe real ni configuración de Netlify, este sitio
+      demuestra la experiencia, pero no cobra ni registra usuarios por sí solo.
+  -->
+  <header class="topbar">
+    <nav class="container nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="NEXO TECH, ir al inicio"><span class="brand-mark" aria-hidden="true"></span> NEXO <small>TECH</small></a>
+      <div class="navlinks">
+        <a href="#inicio" class="active">01 · Inicio</a>
+        <a href="#comunidad">02 · Comunidad</a>
+        <a href="#membresia">03 · Membresía</a>
+      </div>
+      <a class="btn btn-primary btn-header" href="#comunidad">Únete gratis <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PANTALLA 1: INICIO -->
+    <section id="inicio" class="screen" aria-labelledby="titulo-inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Una nueva forma de aprender tecnología</span>
+          <h1 id="titulo-inicio">El futuro no se espera.<br><span class="gradient-text">Se construye.</span></h1>
+          <p class="lead">Descubre inteligencia artificial, automatización y herramientas digitales que puedes aplicar desde hoy. Aprende a tu ritmo y conecta con personas que también quieren crear.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#comunidad">Explorar la comunidad <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#membresia">Conocer NEXO PRO <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="micro-row" aria-label="Características del proyecto">
+            <span><b>03</b> Rutas de aprendizaje</span>
+            <span><b>01</b> Reto semanal propuesto</span>
+            <span><b>∞</b> Ideas por crear</span>
+          </div>
+        </div>
+        <div class="visual" role="img" aria-label="Ilustración tecnológica con círculos orbitales alrededor de un símbolo de inteligencia artificial, y tarjetas de aprendizaje">
+          <div class="visual-head"><span>NEXO // TECH LAB</span><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div></div>
+          <div class="orbital" aria-hidden="true">
+            <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+            <div class="core"><strong>AI</strong></div>
+            <div class="float-chip chip-a"><span>✦ IA generativa</span><small>Aprende a crear</small></div>
+            <div class="float-chip chip-b"><span>⚡ Automatización</span><small>Ahorra tiempo</small></div>
+          </div>
+          <div class="visual-bottom">
+            <div class="visual-stat"><small>Ruta 01</small><strong>Inteligencia artificial</strong></div>
+            <div class="visual-stat"><small>Ruta 02</small><strong>Productividad digital</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="separator" aria-hidden="true"></div>
+
+    <!-- PANTALLA 2: COMUNIDAD -->
+    <section id="comunidad" class="screen" aria-labelledby="titulo-comunidad">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">02 / Comunidad</span>
+          <h2 id="titulo-comunidad">Las mejores ideas <span class="gradient-text">crecen en comunidad.</span></h2>
+          <p class="section-lead">No necesitas saber programar para comenzar. Elige lo que más te interesa, descubre un reto inicial y regístrate para recibir noticias del lanzamiento.</p>
+        </div>
+        <div class="community-grid">
+          <div class="panel">
+            <div class="panel-tag">Explora tu próxima habilidad</div>
+            <div class="topic-tabs" role="tablist" aria-label="Categorías tecnológicas">
+              <button type="button" role="tab" aria-selected="true" id="tab-ia" aria-controls="topic-content" data-topic="ia">✦ Inteligencia artificial</button>
+              <button type="button" role="tab" aria-selected="false" id="tab-auto" aria-controls="topic-content" data-topic="auto" tabindex="-1">⚡ Automatización</button>
+              <button type="button" role="tab" aria-selected="false" id="tab-seg" aria-controls="topic-content" data-topic="seg" tabindex="-1">◈ Seguridad digital</button>
+            </div>
+            <div class="topic-card" id="topic-content" role="tabpanel" aria-labelledby="tab-ia" aria-live="polite">
+              <div class="topic-icon" id="topic-icon" aria-hidden="true">✦</div>
+              <h3 id="topic-title">Haz más con inteligencia artificial</h3>
+              <p id="topic-desc">Aprende a redactar mejores instrucciones, organizar tus ideas y crear proyectos útiles utilizando IA de forma responsable.</p>
+              <div class="learning" id="topic-task">RETO: crea una guía de estudio con IA →</div>
+            </div>
+          </div>
+          <aside class="panel join-panel" aria-labelledby="unete-titulo">
+            <div class="panel-tag">Inscripción gratuita</div>
+            <h3 id="unete-titulo">Tu lugar empieza aquí.</h3>
+            <p>Regístrate para recibir el aviso de lanzamiento, actividades y novedades de NEXO TECH. Sin pagos ni compromisos.</p>
+            <form name="nexo-comunidad" method="POST" action="/?registro=exito#comunidad" data-netlify="true" netlify-honeypot="bot-field" id="join-form">
+              <input type="hidden" name="form-name" value="nexo-comunidad" />
+              <p style="display:none"><label>No llenes este campo: <input name="bot-field" /></label></p>
+              <label class="field-label" for="nombre">Tu nombre</label>
+              <input class="input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" required maxlength="90" />
+              <label class="field-label" for="correo">Correo electrónico</label>
+              <input class="input" id="correo" name="email" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" required maxlength="140" />
+              <button class="btn btn-primary" type="submit">Quiero recibir novedades <span aria-hidden="true">↗</span></button>
+              <p class="fine">Al registrarte, aceptas que usemos tus datos únicamente para comunicarnos sobre esta comunidad. Podrás solicitar dejar de recibir mensajes.</p>
+              <p class="success" id="success" hidden role="status">✓ ¡Solicitud enviada! Revisa las próximas noticias de NEXO TECH.</p>
+            </form>
+          </aside>
+        </div>
+        <div class="benefit-row" aria-label="Beneficios de la comunidad">
+          <div class="benefit"><span class="benefit-icon" aria-hidden="true">🧠</span><div><strong>Aprendizaje simple</strong><p>Conceptos claros y ejemplos que puedes probar.</p></div></div>
+          <div class="benefit"><span class="benefit-icon" aria-hidden="true">🤝</span><div><strong>Colaboración</strong><p>Comparte tus avances y preguntas al abrir la comunidad.</p></div></div>
+          <div class="benefit"><span class="benefit-icon" aria-hidden="true">🚀</span><div><strong>Retos prácticos</strong><p>Convierte tus conocimientos en proyectos reales.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="separator" aria-hidden="true"></div>
+
+    <!-- PANTALLA 3: MONETIZACIÓN -->
+    <section id="membresia" class="screen" aria-labelledby="titulo-membresia">
+      <div class="container pricing-grid">
+        <div>
+          <span class="eyebrow">03 / Membresía</span>
+          <h2 id="titulo-membresia">De curioso a <span class="gradient-text">creador digital.</span></h2>
+          <p class="section-lead">La comunidad gratis es el punto de partida. NEXO PRO es una propuesta de membresía con contenido ampliado para quienes quieren avanzar más rápido.</p>
+          <div class="value-list">
+            <div class="value-item"><span class="check" aria-hidden="true">✓</span><div><strong>Aprende a tu ritmo</strong><p>Lecciones breves y recursos organizados por nivel.</p></div></div>
+            <div class="value-item"><span class="check" aria-hidden="true">✓</span><div><strong>Construye algo útil</strong><p>Plantillas, ejercicios y proyectos con aplicaciones reales.</p></div></div>
+            <div class="value-item"><span class="check" aria-hidden="true">✓</span><div><strong>Comparte y mejora</strong><p>Retos y sesiones grupales propuestas para la comunidad PRO.</p></div></div>
+          </div>
+          <p class="disclaimer">Proyecto demostrativo: el contenido PRO y la comunidad privada deberán habilitarse antes de comercializar la membresía.</p>
+        </div>
+        <div class="price-card">
+          <span class="pill">PROPUESTA DE SUSCRIPCIÓN</span>
+          <h3>NEXO PRO <span aria-hidden="true">✦</span></h3>
+          <p>Todo lo que necesitas para dar tu siguiente paso digital.</p>
+          <div class="price"><span class="curr">MX$</span><strong>99</strong><span class="cycle">/ mes</span></div>
+          <div class="price-divider"></div>
+          <ul class="included">
+            <li>Acceso a guías y tutoriales exclusivos</li>
+            <li>Plantillas para productividad con IA</li>
+            <li>Un reto avanzado cada semana</li>
+            <li>Sesiones y recursos para miembros PRO</li>
+            <li>Comunidad de aprendizaje y apoyo</li>
+          </ul>
+          <button id="stripe-button" class="btn btn-primary" type="button">Ir al pago seguro <span class="arrow" aria-hidden="true">↗</span></button>
+          <p class="payment-note" id="payment-status">La suscripción no está habilitada hasta conectar tu enlace de Stripe.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#inicio" class="brand"><span class="brand-mark" aria-hidden="true"></span> NEXO <small>TECH</small></a>
+      <p>© <span id="year">2026</span> NEXO TECH · Proyecto académico de tecnología y emprendimiento digital.</p>
+      <a href="#comunidad">Únete a las novedades ↗</a>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="payment-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+      <button class="close" type="button" id="close-modal" aria-label="Cerrar ventana">×</button>
+      <span class="pill">CONFIGURACIÓN PENDIENTE</span>
+      <h3 id="modal-title">Activa tus cobros con Stripe</h3>
+      <p id="modal-desc">Este proyecto ya tiene preparado el botón de pago, pero todavía no existe un enlace real de cobro.</p>
+      <ol>
+        <li>Crea un producto de suscripción de <b>MX$99 al mes</b> en Stripe.</li>
+        <li>Genera un <b>Payment Link</b> de ese producto.</li>
+        <li>En este archivo busca <code>STRIPE_PAYMENT_LINK</code> y pega la URL pública del enlace.</li>
+      </ol>
+      <p>También tendrás que crear el acceso real al contenido PRO y entregar ese acceso a quienes paguen.</p>
+      <button type="button" class="btn btn-outline" id="modal-ok">Entendido</button>
+    </div>
+  </div>
+
+  <script>
+    // CONFIGURACIÓN. ÚNICAMENTE PEGAR UNA URL PÚBLICA DE STRIPE PAYMENT LINKS.
+    // Ejemplo de formato: https://buy.stripe.com/xxxxxxxx  (no es un enlace real).
+    // Nunca incluir claves sk_live_, sk_test_ ni datos privados en esta página.
+    const STRIPE_PAYMENT_LINK = "";
+
+    const topics = {
+      ia: { icon: '✦', title: 'Haz más con inteligencia artificial', description: 'Aprende a redactar mejores instrucciones, organizar tus ideas y crear proyectos útiles utilizando IA de forma responsable.', task: 'RETO: crea una guía de estudio con IA →' },
+      auto: { icon: '⚡', title: 'Automatiza tus tareas repetitivas', description: 'Descubre cómo conectar herramientas y convertir procesos largos en flujos de trabajo más sencillos para ahorrar tiempo.', task: 'RETO: diseña tu primera automatización →' },
+      seg: { icon: '◈', title: 'Protege tu vida digital', description: 'Aprende hábitos de privacidad, contraseñas seguras y cómo reconocer mensajes sospechosos antes de hacer clic.', task: 'RETO: activa la verificación en dos pasos →' }
+    };
+    const tabs = [...document.querySelectorAll('[data-topic]')];
+    function selectTopic(key){
+      const topic = topics[key]; if (!topic) return;
+      tabs.forEach(tab=>{ const active=tab.dataset.topic===key; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; });
+      document.getElementById('topic-icon').textContent=topic.icon;
+      document.getElementById('topic-title').textContent=topic.title;
+      document.getElementById('topic-desc').textContent=topic.description;
+      document.getElementById('topic-task').textContent=topic.task;
+      document.getElementById('topic-content').setAttribute('aria-labelledby','tab-'+key);
+    }
+    tabs.forEach((tab,index)=>{
+      tab.addEventListener('click',()=>selectTopic(tab.dataset.topic));
+      tab.addEventListener('keydown',event=>{
+        if (!['ArrowRight','ArrowLeft','Home','End'].includes(event.key)) return;
+        event.preventDefault();
+        const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;
+        selectTopic(tabs[next].dataset.topic);tabs[next].focus();
+      });
+    });
+
+    const paymentButton=document.getElementById('stripe-button');
+    const paymentModal=document.getElementById('payment-modal');
+    const closeModal=document.getElementById('close-modal');
+    const modalOk=document.getElementById('modal-ok');
+    let priorFocus=null;
+    const validPaymentLink=(()=>{try{const u=new URL(STRIPE_PAYMENT_LINK);return u.protocol==='https:' && (u.hostname==='buy.stripe.com'||u.hostname==='checkout.stripe.com');}catch{return false}})();
+    if (validPaymentLink) document.getElementById('payment-status').textContent='Serás redirigido al pago alojado de Stripe. Revisa las condiciones antes de pagar.';
+    function dismissModal(){paymentModal.hidden=true;document.body.style.overflow='';if(priorFocus)priorFocus.focus();}
+    paymentButton.addEventListener('click',()=>{
+      if(validPaymentLink){window.location.assign(STRIPE_PAYMENT_LINK);return;}
+      priorFocus=document.activeElement;paymentModal.hidden=false;document.body.style.overflow='hidden';closeModal.focus();
+    });
+    closeModal.addEventListener('click',dismissModal);modalOk.addEventListener('click',dismissModal);
+    paymentModal.addEventListener('click',event=>{if(event.target===paymentModal)dismissModal()});
+    document.addEventListener('keydown',event=>{
+      if(paymentModal.hidden)return;
+      if(event.key==='Escape')dismissModal();
+      if(event.key==='Tab'){
+        const buttons=[closeModal,modalOk];
+        if(event.shiftKey&&document.activeElement===buttons[0]){event.preventDefault();buttons[1].focus()}
+        else if(!event.shiftKey&&document.activeElement===buttons[1]){event.preventDefault();buttons[0].focus()}
+      }
+    });
+    const search=new URLSearchParams(window.location.search);
+    if(search.get('registro')==='exito')document.getElementById('success').hidden=false;
+    document.getElementById('year').textContent=new Date().getFullYear();
+    if('IntersectionObserver' in window){
+      const navLinks=[...document.querySelectorAll('.navlinks a')];
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id)})}})
+      },{rootMargin:'-18% 0px -55% 0px'});
+      document.querySelectorAll('main > section').forEach(s=>io.observe(s));
+    }
+  </script>
+</body>
+</html>
